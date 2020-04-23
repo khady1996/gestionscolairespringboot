@@ -16,11 +16,9 @@
 	<title>Profil</title>
 </head>
 <body>
-	<%
-		Direction d = (Direction) session.getAttribute("directionSession");
-	%>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
- 		<a class="navbar-brand" href="accueil.jsp">Gestion Etudiants <%=d.getLogin() %></a>
+ 		<a class="navbar-brand" href="accueil.jsp">Gestion Etudiants</a>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item active" style="padding-right: 10px">
@@ -43,7 +41,7 @@
 		  <img src="./images/accueil/book.jpg" class="card-img-top" alt="Information étudiant">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Information étudiant</h5>
-    		<a href="recherche-detail-etudiant" class="stretched-link"></a>
+    		<a href="getFormLireEtudiant" class="stretched-link"></a>
 		  </div>
 		</div>
 		<div class="card" style="width: 220px;">
@@ -59,14 +57,14 @@
 		  <img src="./images/accueil/geometry.jpg" class="card-img-top" alt="Modifié étudiant">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Modifier étudiant</h5>
-    		<a href="recherche-modifier-etudiant" class="stretched-link"></a>
+    		<a href="getFormModifierEtudiant" class="stretched-link"></a>
 		  </div>
 		</div>
 		<div class="card" style="width: 220px;">
 		  <img src="./images/accueil/laptop.jpg" class="card-img-top" alt="Ajout étudiant">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Ajouter un étudiant</h5>
-    		<a href="ajouter-etudiant" class="stretched-link"></a>
+    		<a href="getFormAjoutEtudiant" class="stretched-link"></a>
 		  </div>
 		</div>
 		<div class="card" style="width: 220px;">
