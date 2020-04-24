@@ -45,7 +45,7 @@
         <div class="card card-container">
             <p id="profile-name" class="profile-name-card">Formulaire d'ajout d'étudiant</p>
             
-            <form class="form-signin" action="ajouter-etudiant" method="post">
+            <form class="form-signin" action="/saveEtudiant" method="post">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input name="nom" type="text" id="inputEmail" class="form-control" placeholder="Nom" required autofocus>
                 <input name="prenom" type="text" id="inputEmail" class="form-control" placeholder="Prenom" required autofocus>

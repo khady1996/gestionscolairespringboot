@@ -34,7 +34,7 @@
 		  <img src="./images/accueil/people.jpg" class="card-img-top" alt="Liste étudiants">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Lister les étudiants</h5>
-    		<a href="liste-etudiants" class="stretched-link"></a>
+    		<a href="/listeEtudiants" class="stretched-link"></a>
 		  </div>
 		</div>
 		<div class="card" style="width: 220px;">
@@ -48,7 +48,7 @@
 		  <img src="./images/accueil/children.jpg" class="card-img-top" alt="Supprimer étudiant">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Supprimer étudiant</h5>
-    		<a href="supprimer-etudiant" class="stretched-link"></a>
+    		<a href="getFormSupprimerEtudiant" class="stretched-link"></a>
 		  </div>
 		</div>
 	</div>
