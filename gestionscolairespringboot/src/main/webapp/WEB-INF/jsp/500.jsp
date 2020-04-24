@@ -25,12 +25,12 @@
 			          Menu étudiant
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			          <a class="dropdown-item" href="liste-etudiants">Lister étudiants</a>
-			          <a class="dropdown-item" href="recherche-detail-etudiant">Info étudiant</a>
-			          <a class="dropdown-item" href="supprimer-etudiant">Supprimer un étudiant</a>
-			          <a class="dropdown-item" href="recherche-modifier-etudiant">Modifier un étudiant</a>
-			          <a class="dropdown-item" href="ajouter-etudiant">Ajouter un étudiant</a>
-			          <a class="dropdown-item" href="ajouter-etudiant-cours">Rajouter un étudiant à un cours</a>
+			          <a class="dropdown-item" href="listeEtudiants">Lister étudiants</a>
+			          <a class="dropdown-item" href="getFormLireEtudiant">Info étudiant</a>
+			          <a class="dropdown-item" href="getFormSupprimerEtudiant">Supprimer un étudiant</a>
+			          <a class="dropdown-item" href="getFormModifierEtudiant">Modifier un étudiant</a>
+			          <a class="dropdown-item" href="getFormAjoutEtudiant">Ajouter un étudiant</a>
+			          <a class="dropdown-item" href="getFormAjoutEtudiantCours">Rajouter un étudiant à un cours</a>
 			        </div>
 			    </li>
 				<li class="nav-item active" style="padding-right: 10px">
@@ -47,7 +47,7 @@
 	        <div class="man-icon"></div>
 	        <h3 class="title">500</h3>
 	        <p class="info">Oh! Page not found</p>
-	        <button type="button" class="home-btn" onclick="location.href = '/GestionEtudiant/accueil.jsp';">Accueil</button>
+	        <button type="button" class="home-btn" onclick="location.href = '/gestionscolairespringboot/accueil.jsp';">Accueil</button>
     	</div>
 	</div>
 </body>

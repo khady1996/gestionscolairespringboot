@@ -34,7 +34,7 @@
 		  <img src="./images/accueil/people.jpg" class="card-img-top" alt="Liste étudiants">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Lister les étudiants</h5>
-    		<a href="/listeEtudiants" class="stretched-link"></a>
+    		<a href="listeEtudiants" class="stretched-link"></a>
 		  </div>
 		</div>
 		<div class="card" style="width: 220px;">
@@ -71,7 +71,7 @@
 		  <img src="./images/accueil/laptop2.jpg" class="card-img-top" alt="Ajout étudiant cours">
 		  <div class="card-body">
 		    <h5 class="card-title" style="text-align: center">Ajouter un étudiant à un cours</h5>
-    		<a href="ajouter-etudiant-cours" class="stretched-link"></a>
+    		<a href="getFormAjoutEtudiantCours" class="stretched-link"></a>
 		  </div>
 		</div>
 	</div>
