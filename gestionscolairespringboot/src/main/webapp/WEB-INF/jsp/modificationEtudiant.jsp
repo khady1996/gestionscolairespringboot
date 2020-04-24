@@ -46,7 +46,7 @@
 		<div class="card card-container">
 			<p id="profile-name" class="profile-name-card">Formulaire de modification d'un étudiant</p>
 			<c items="${etudiant}" var="etudiant">
-				<form class="form-signin" action="modifier-etudiant" method="post">
+				<form class="form-signin" action="udpateEtudiant" method="post">
 					<input name="idEtudiant" type="number" id="inputEmail" class="form-control" placeholder="Nom" value="${etudiant.id}" autofocus readonly>
 					<input name="nom" type="text" id="inputEmail" class="form-control" placeholder="Nom" value="${etudiant.nom}" autofocus>
 	                <input name="prenom" type="text" id="inputEmail" class="form-control" placeholder="Prenom" value="${etudiant.prenom}" required autofocus>

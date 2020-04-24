@@ -46,7 +46,7 @@
 		<div class="card card-container">
 			<div class="row">
 				<h2>Entrer l'identifiant : </h2>
-				<form action="recherche-modifier-etudiant" method="post">
+				<form action="readUpdateEtudiant" method="post">
 					<div class="search">
 						<input type="number" class="form-control input-sm" maxlength="50" placeholder="Identifiant étudiant" name="idEtudiant"/>
 						<button type="submit" class="btn btn-primary btn-sm">Rechercher</button>

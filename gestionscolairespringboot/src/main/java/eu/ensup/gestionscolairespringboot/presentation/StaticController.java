@@ -14,27 +14,44 @@ import eu.ensup.gestionscolairespringboot.domaine.Cours;
 import eu.ensup.gestionscolairespringboot.domaine.Direction;
 import eu.ensup.gestionscolairespringboot.domaine.Etudiant;
 
+/**
+ * @author Khady, Benjamin and David
+ *
+ */
 @Controller
 public class StaticController {
 
 	@Autowired
 	IEtudiantService ietudiantservice;
 
+	/**
+	 * @return
+	 */
 	@Bean
 	public EtudiantService ietudiantservice() {
 		return new EtudiantService();
 
 	}
 
+	/**
+	 * 
+	 */
 	public StaticController() {
 		super();
 	}
 
+	/**
+	 * @param iformationService
+	 */
 	public StaticController(IEtudiantService iformationService) {
 		super();
 		this.ietudiantservice = iformationService;
 	}
 
+	/**
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/listeEtudiants")
 	public String listeEtudiants(Model model) {
 		System.out.println("entree dans la methode listeEtudiants");
@@ -42,6 +59,10 @@ public class StaticController {
 		return "listeEtudiants";
 	}
 
+	/**
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/listeCours")
 	public String listeCours(Model model) {
 		System.out.println("entree dans la methode listeEtudiants");
@@ -49,6 +70,9 @@ public class StaticController {
 		return "listeCours";
 	}	
 
+	/**
+	 * @return
+	 */
 	@RequestMapping("/accueil")
 	public String accueil() {
 		System.out.println("entree dans la methode accueil");
@@ -56,6 +80,9 @@ public class StaticController {
 		return "accueil";
 	}
 
+	/**
+	 * @return
+	 */
 	@RequestMapping("/")
 	public String home() {
 		System.out.println("entree dans la methode home");
@@ -63,6 +90,11 @@ public class StaticController {
 		return "index";
 	}
 
+	/**
+	 * @param etudiant
+	 * @param cours
+	 * @return
+	 */
 	@PostMapping("/lierEtudiantCours")
 	public String lierEtudiantCours(Etudiant etudiant, Cours cours) {
 		System.out.println("entree dans la methode ajouterEtudiant");
@@ -70,11 +102,25 @@ public class StaticController {
 		return "messageAjoutEtudiantCours";
 	}
 
+	/**
+	 * @return
+	 */
 	@GetMapping("getFormAjoutEtudiant")
 	public String getFormAjoutEtudiant() {
 		return "ajouterEtudiant";
 	}
 
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param telephone
+	 * @param adresse
+	 * @param mail
+	 * @param dateNaissance
+	 * @param etudiant
+	 * @param modelMap
+	 * @return
+	 */
 	@PostMapping("/saveEtudiant") // it only support port method
 	public String saveEtudiant(@RequestParam("nom") String nom, @RequestParam("prenom") String prenom,
 			@RequestParam("telephone") int telephone, @RequestParam("adresse") String adresse,
@@ -92,11 +138,21 @@ public class StaticController {
 		return "listeEtudiants"; // welcome is view name. It will call welcome.jsp
 	}
 	
+	/**
+	 * @return
+	 */
 	@GetMapping("/")
 	public String getFormLogin() {
 		return "index";
 	}
 
+	/**
+	 * @param password
+	 * @param login
+	 * @param direction
+	 * @param modelMap
+	 * @return
+	 */
 	@PostMapping("/login") // it only support port method
 	public String login(
 			@RequestParam("password") String password, 
@@ -112,11 +168,19 @@ public class StaticController {
 		return "accueil"; // welcome is view name. It will call welcome.jsp
 	}
 	
+	/**
+	 * @return
+	 */
 	@GetMapping("getFormLireEtudiant")
 	public String getFormLireEtudiant() {
 		return "searchEtudiant";
 	}
 
+	/**
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/readEtudiant") // it only support port method
 	public String readEtudiant(@RequestParam("idEtudiant") int id,
 			Model model) {
@@ -126,25 +190,72 @@ public class StaticController {
 	
 	
 	
+	/**
+	 * @return
+	 */
 	@GetMapping("getFormModifierEtudiant")
 	public String getFormModifierEtudiant() {
 		return "rechercheModificationEtudiant";
 	}
 
+	/**
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@PostMapping("/readUpdateEtudiant") // it only support port method
+	public String readUpdateEtudiant(@RequestParam("idEtudiant") int id,
+			Model model) {
+		model.addAttribute("etudiant", ietudiantservice.lireEtudiant(id));
+		return "modificationEtudiant"; // welcome is view name. It will call welcome.jsp
+	}
+	
+	/**
+	 * @param idEtudiant
+	 * @param nom
+	 * @param prenom
+	 * @param telephone
+	 * @param adresse
+	 * @param mail
+	 * @param dateNaissance
+	 * @param etudiant
+	 * @param modelMap
+	 * @return
+	 */
 	@PostMapping("/udpateEtudiant") // it only support port method
-	public String udpateEtudiant(@RequestParam("nom") String nom, @RequestParam("prenom") String prenom,
+	public String udpateEtudiant(@RequestParam("idEtudiant") int idEtudiant, @RequestParam("nom") String nom, @RequestParam("prenom") String prenom,
 			@RequestParam("telephone") int telephone, @RequestParam("adresse") String adresse,
 			@RequestParam("mail") String mail, @RequestParam("dateNaissance") String dateNaissance, Etudiant etudiant,
 			ModelMap modelMap) {
+		etudiant.setId(idEtudiant);
 		etudiant.setNom(nom);
 		etudiant.setPrenom(prenom);
 		etudiant.setAdresse(adresse);
 		etudiant.setTelephone(telephone);
 		etudiant.setDateNaissance(dateNaissance);
-		ietudiantservice.save(etudiant);
-		modelMap.addAttribute("etudiant", ietudiantservice.lireEtudiant(id));
-		return "modificationEtudiant"; // welcome is view name. It will call welcome.jsp
+		ietudiantservice.update(etudiant);
+		return "listeEtudiants"; // welcome is view name. It will call welcome.jsp
 	}
 	
 
+	/**
+	 * @return
+	 */
+	@GetMapping("getFormSupprimerEtudiant")
+	public String getFormSupprimerEtudiant() {
+		return "suppressionEtudiant";
+	}
+	/**
+	 * @param idEtudiant
+	 * @param etudiant
+	 * @param modelMap
+	 * @return
+	 */
+	@PostMapping("/deleteEtudiant") // it only support port method
+	public String deleteEtudiant(@RequestParam("idEtudiant") int idEtudiant, Etudiant etudiant,
+			ModelMap modelMap) {
+		etudiant.setId(idEtudiant);		
+		ietudiantservice.delete(etudiant);
+		return "messageSuppression"; // welcome is view name. It will call welcome.jsp
+	}
 }
