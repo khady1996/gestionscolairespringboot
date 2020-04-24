@@ -4,8 +4,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <style type="text/css">
-  <%@include file="../css/style.css" %>
-  <%@include file="../js/style.js" %>
+  <%@include file="/css/style.css" %>
+  <%@include file="/js/style.js" %>
 </style>
 <!-- ---- Include the above in your HEAD tag -------- -->
 
@@ -18,7 +18,7 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" action="login" method="post">
+            <form class="form-signin" action="/login" method="post">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input name="login" type="text" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
                 <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
